@@ -13,7 +13,8 @@ auth.set_access_token(access_token,access_token_secret)
 api=tweepy.API(auth)
 
 # search for tweets
-public_tweets = api.search('World record egg')
+topic = input("Enter the name of topic for which you want to calculate sentiment analysis:")
+public_tweets = api.search(topic)
 for tweet in public_tweets:
     print(tweet.text)
     analysis = TextBlob(tweet.text)
